@@ -4,3 +4,5 @@ function fibs(n) {
   }
   return fibs(n - 1) + fibs(n - 2);
 }
+
+export { fibs }
