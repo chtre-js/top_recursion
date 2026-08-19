@@ -1,11 +1,11 @@
 function mergeSort(arr) {
-  const sortedArr = [];
-  if (arr.length < 1 || arr.length === 1) {
-    sortedArr.push(...arr);
-    return sortedArr;
-  }
+  if (arr.length <= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+
+  return mergeSort(left, right);
 }
 
-console.log(mergeSort([]))
-
-export default mergeSort
+export default mergeSort;
