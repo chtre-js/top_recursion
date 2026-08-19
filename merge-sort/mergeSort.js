@@ -1,3 +1,10 @@
+function merge(left,right) {
+  const arr = [];
+  arr.push(...left);
+  arr.push(...right);
+  return arr;
+}
+
 function mergeSort(arr) {
   if (arr.length <= 1) return arr;
 
@@ -5,7 +12,7 @@ function mergeSort(arr) {
   const left = mergeSort(arr.slice(0, mid));
   const right = mergeSort(arr.slice(mid));
 
-  return mergeSort(left, right);
+  return merge(left, right);
 }
 
 export default mergeSort;
