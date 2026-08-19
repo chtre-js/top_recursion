@@ -1,7 +1,11 @@
 function merge(left,right) {
   const arr = [];
-  arr.push(...left);
-  arr.push(...right);
+
+  let i = 0, j = 0;
+  while (i < left.length && j < right.length) {
+    arr.push(left[i] <= right[i] ? left[i++] : right[j++])
+  }
+  arr.push(...left.slice(i), ...right.slice(j));
   return arr;
 }
 
